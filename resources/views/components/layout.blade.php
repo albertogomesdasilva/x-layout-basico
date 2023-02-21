@@ -15,7 +15,7 @@
 <body>
     <div class="container mt-4">
         <h1>LAYOUT PRINCIPAL</h1>
-         <button class="btn btn-success"><a href="/">Index</a></button> <button class="btn btn-success"><a href="/lista">Lista</a></button>
+         <button class="but"><a href="/">Index</a></button> <button class="but"><a href="/lista">Lista</a></button>
 
         <hr>
 
