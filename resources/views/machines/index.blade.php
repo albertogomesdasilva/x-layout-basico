@@ -1,5 +1,5 @@
 <x-layout>
-    <h1>TESTE</h1>
-    <button class="btn btn-success">Botão</button>
+     <h3>página index com botão</h3>
+   
 
 </x-layout>
