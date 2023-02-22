@@ -32,7 +32,31 @@
         </li>
 
         {{-- Menu usuario -> sair --}}
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ Auth::user()->name }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+            
+             <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                    {{ __('Sair') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            
+            </li>
+           
+          </ul>
+        </li> --}}
+
+      
+      </ul>
+       <div class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{ Auth::user()->name }}
           </a>
@@ -53,16 +77,6 @@
            
           </ul>
         </li>
-
-      
-      </ul>
-      <form class="d-flex">
-     
-        <input class="form-control me-2" type="" placeholder=" {{ Auth::user()->name }}" aria-label="Search" disabled>
-        
-
-        {{-- <button class="btn btn-outline-success" type="submit">Search</button> --}}
-      </form>
     </div>
   </div>
 </nav>
@@ -72,9 +86,7 @@
    
    
         <h1>LAYOUT PRINCIPAL</h1>
-            <div  class="esq">
-                {{-- {{ Auth::user()->name }} --}}
-            </div>
+          
         
              
         <hr>
