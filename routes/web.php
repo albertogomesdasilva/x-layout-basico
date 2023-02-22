@@ -13,16 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('machines.index');
-});
+Auth::routes();
+
+// Route::get('/', function () {
+//     return view('machines.index')->middleware('auth');
+// });
+
 Route::get('/lista', function () {
     return view('machines.lista');
 });
 
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', [App\Http\Controllers\RaizController::class, 'index'])->name('machine.index');
 
 

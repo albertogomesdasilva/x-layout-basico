@@ -14,9 +14,70 @@
 </head>
 <body>
     <div class="container mt-4">
-        <h1>LAYOUT PRINCIPAL</h1>
-         <button class="but"><a href="/">Index</a></button> <button class="but"><a href="/lista">Lista</a></button>
 
+   {{-- NAV BAR INÍCIO --}}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/lista">Lista</a>
+        </li>
+
+        {{-- Menu usuario -> sair --}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ Auth::user()->name }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+            
+             <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                    {{ __('Sair') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            
+            </li>
+           
+          </ul>
+        </li>
+
+      
+      </ul>
+      <form class="d-flex">
+     
+        <input class="form-control me-2" type="" placeholder=" {{ Auth::user()->name }}" aria-label="Search" disabled>
+        
+
+        {{-- <button class="btn btn-outline-success" type="submit">Search</button> --}}
+      </form>
+    </div>
+  </div>
+</nav>
+
+   {{-- NAV BAR FIM --}}
+   
+   
+   
+        <h1>LAYOUT PRINCIPAL</h1>
+            <div  class="esq">
+                {{-- {{ Auth::user()->name }} --}}
+            </div>
+        
+             
+        <hr>
         <hr>
 
     {{ $slot }}

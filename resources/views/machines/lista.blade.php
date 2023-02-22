@@ -1,5 +1,5 @@
 <x-layout>
-    <h3>página index</h3>
+    <h3>página Lista</h3>
    
 
 </x-layout>
